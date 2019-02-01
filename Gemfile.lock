@@ -47,6 +47,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-magic (0.0.4)
+      carrierwave
+      ruby-filemagic
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -140,6 +143,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rmagick (2.16.0)
+    ruby-filemagic (0.7.2)
     sass (3.7.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -189,6 +194,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   carrierwave
+  carrierwave-magic
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
@@ -198,6 +204,8 @@ DEPENDENCIES
   pry-byebug
   puma (~> 3.0)
   rails (~> 5.0.6)
+  rmagick
+  ruby-filemagic
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

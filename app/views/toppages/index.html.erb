@@ -1,13 +1,28 @@
 <% if logged_in? %>
-  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+  <div class="row">
+    <aside class="col-md-4">
+      <p>投稿してみよう！</p>
+      <%= form_for(@post) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :content, class: 'form-control', rows: 5 %>
+          <%= f.label :image ,"画像" %>
+          <%= f.file_field :image %>
+        </div>
+        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </aside>
+    <div class="col-xs-8">
+      <%= render 'posts/posts', posts: @posts %>
+    </div>
+  </div>
 <% else %>
 
 
 <div class="center jumbotron">
   <div class="text-center">
-    <h1>思いで共有サービス</h1>
-    <p>あなたの思いでをみんなにShare！</p>
-    <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    <h1>出来事共有アプリ</h1>
+    <p>身の回りにあった楽しい出来事を、共有してみませんか？</p>
+    <%= link_to 'ユーザー登録', signup_path, class: 'btn btn-lg btn-primary' %>
   </div>
 </div>
 <% end %>
