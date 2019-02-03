@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+li[class="media"]{
+    list-style-type: none;
+}
+
+.navbar {
+  background-color: #fff;
+}

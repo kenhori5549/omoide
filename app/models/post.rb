@@ -7,6 +7,5 @@ class Post < ApplicationRecord
    
  has_many :comments
  has_many :replyeds,through: :comments,source: :user
-
-
+  
 end
