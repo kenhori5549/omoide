@@ -1,0 +1,39 @@
+<div class="row">
+  <aside class="col-xs-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div>投稿者のプロフィール</div>
+        <h3 class="panel-title"><%= @user.name %>さん</h3>
+      </div>
+      <div class="panel-body">
+        <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+      </div>
+    </div>
+  </aside>
+  <div class="col-xs-8">
+
+    <% if @post.image? %>
+  　　<%= image_tag @post.image.url %>
+  　<% else %>
+  　　<%= image_tag 'noimage.jpg',:size =>'320x320' %>
+  　<% end %>
+        <div>
+          <p><%= @post.title %></p>
+          <p><%= @post.content %></p>
+        </div>
+        
+          <% if current_user == @post.user %>
+            <%= link_to "Delete", @post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" }, class: 'btn btn-danger btn-default' %>
+          <% end %>
+    <%= render 'comments/comments', comments: @comments %>
+      
+      <%= form_for(@comment) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :content, class: 'form-control', rows: 2 %>
+        </div>
+        <%= hidden_field_tag :post_id, @post.id %>
+        <%= f.submit 'コメントする', class: 'btn btn-sucess btn-sm' %>
+      <% end %>      
+    
+  </div>
+</div>

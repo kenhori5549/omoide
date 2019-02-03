@@ -8,7 +8,7 @@ class PostsController < ApplicationController
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to root_url
     else
-      @posts = current_user.posts.order('created_at DESC').page(params[:page])
+      @posts = current_user.posts.order('created_at DESC').page(params[:page]).per(20)
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
       render 'toppages/index'
     end
@@ -20,10 +20,18 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def show
+     @post = Post.find(params[:id])
+     @comment = current_user.comments.build #コメントform用
+     @comments = @post.comments.order('created_at DESC').page(params[:page]).per(10)#コメント一覧表示用
+     commentcounts(@post)
+     @user =User.find(@post.user_id)
+  end
+  
    private
 
   def post_params
-    params.require(:post).permit(:content,:image)
+    params.require(:post).permit(:content,:title,:image,:comment)
   end
   
    def correct_user

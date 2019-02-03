@@ -3,6 +3,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
    # リサイズしたり画像形式を変更するのに必要
    include CarrierWave::RMagick
+   include CarrierWave::Magic
    process :set_magic_content_type => [true]
   # include CarrierWave::MiniMagick
 

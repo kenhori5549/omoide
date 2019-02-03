@@ -9,13 +9,14 @@
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
         </div>
         <div>
+           <% if post.image? %>
+        　　<%= link_to image_tag(post.image.thumb.url), post %>
+        　<% else %>
+        　　<%= image_tag 'noimage.jpg',:size =>'240x240' %>
+        　<% end %>
+          <p><%= post.title %></p>
           <p><%= post.content %></p>
         </div>
-        <% if post.image? %>
-        　　<%= image_tag post.image.thumb.url %>
-        　<% else %>
-        　　<%= image_tag 'noimage.jpg',:size =>'320x320' %>
-        　<% end %>
         <div>
           <% if current_user == post.user %>
             <%= link_to "Delete", post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" }, class: 'btn btn-danger btn-xs' %>
