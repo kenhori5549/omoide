@@ -58,3 +58,5 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'ruby-filemagic'
 gem 'carrierwave-magic'
+# for Bootstrap3
+gem 'bootstrap-sass'

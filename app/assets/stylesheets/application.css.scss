@@ -13,10 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 li[class="media"]{
     list-style-type: none;
 }
 
-.navbar {
-  background-color: #fff;
-}
+/*.navbar {
+  background-color: #6699FF;
+} */
+

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end  
   end
   
-  resources :posts, only: [:create, :destroy,:show] do
+  resources :posts, only: [:create, :destroy,:show,:new] do
     member do
       get :replyeds
     end
