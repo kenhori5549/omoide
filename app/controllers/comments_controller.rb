@@ -3,11 +3,17 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def create
+    
     post = Post.find(params[:post_id])
-    current_user.reply(post,params[:comment][:content])
+    if current_user.reply(post,params.require(:comment).permit(:content)[:content])
     flash[:success] = 'コメントしました。'
     redirect_to post
-  end
+    
+    else
+    flash[:info] = 'コメントに失敗しました。'
+     redirect_to post
+    end
+  end  
 
   def destroy
     #comment = Comment.find_by(params[:id])
@@ -23,6 +29,5 @@ class CommentsController < ApplicationController
       unless @comment
         redirect_to root_url
       end
-  
     end
 end

@@ -16,12 +16,43 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body{
+      /*font-family: 'Noto Sans Japanese', serif;
+      font-weight: 900;*/
+      font-family: 'Open Sans', sans-serif;
+      color : #41424E;
+}
 
 li[class="media"]{
     list-style-type: none;
 }
 
+
+.row div .title{
+  color : #41424E;
+  font-size : 1.8em;
+  font-weight: 1000;
+
+}
+
+.row div .content{
+  color : #41424E;
+}
+
+.btn-danger{
+  background-color : #F26161;
+  color :#FFFFFF;
+}
+.pull-right{
+  background-color : #F26161;
+  color :#FFFFFF;
+}
+
+.alert{
+  background-color : #F26161;
+  color : #FFFFFF;
+}
 /*.navbar {
   background-color: #6699FF;
 } */
-

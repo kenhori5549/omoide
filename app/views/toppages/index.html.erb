@@ -1,23 +1,9 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
-      <p>投稿してみよう！</p>
-      <%= form_for(@post) do |f| %>
-        <div class="form-group">
-          <%= f.label :title ,"タイトル" %>
-          <%= f.text_area :title, class: 'form-control', rows: 1 %>
-           <%= f.label :content ,"内容" %>
-          <%= f.text_area :content, class: 'form-control', rows: 5 %>
-          <%= f.label :image ,"画像" %>
-          <%= f.file_field :image %>
-        </div>
-        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-      <% end %>
-    </aside>
-    <div class="col-xs-8">
+   
       <%= render 'posts/posts', posts: @posts %>
-    </div>
   </div>
+
 <% else %>
 
 

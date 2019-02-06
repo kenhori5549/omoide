@@ -17,9 +17,13 @@
   　<% else %>
   　　<%= image_tag 'noimage.jpg',:size =>'320x320' %>
   　<% end %>
+ 
+   
+   　<p> <span class="text-muted">投稿日：<%= simple_time(@post.created_at) %></span></p>
+  　
         <div>
-          <p><%= @post.title %></p>
-          <p><%= @post.content %></p>
+          <p class="title"><%= @post.title %></p>
+          <p class ="content"><%= @post.content %></p>
         </div>
         
         <%#if current_user == @post.user % エラーになるので削除>

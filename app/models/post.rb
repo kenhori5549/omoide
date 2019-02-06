@@ -5,7 +5,7 @@ class Post < ApplicationRecord
    mount_uploader :image, ImageUploader
    #validate :image_valid?
    
- has_many :comments
+ has_many :comments, dependent: :destroy
  has_many :replyeds,through: :comments,source: :user
   
 end
