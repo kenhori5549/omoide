@@ -6,19 +6,19 @@ class CommentsController < ApplicationController
     
     post = Post.find(params[:post_id])
     if current_user.reply(post,params.require(:comment).permit(:content)[:content])
-    flash[:success] = 'コメントしました。'
+    flash[:info] = 'コメントしました。'
     redirect_to post
     
     else
     flash[:info] = 'コメントに失敗しました。'
-     redirect_to post
+    render post
     end
   end  
 
   def destroy
     #comment = Comment.find_by(params[:id])
     @comment.destroy
-    flash[:success] = 'あなたのコメントを削除しました。'
+    flash[:info] = 'あなたのコメントを削除しました。'
     redirect_back(fallback_location: root_path)
   end
   

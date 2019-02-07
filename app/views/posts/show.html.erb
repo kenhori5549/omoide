@@ -13,15 +13,15 @@
   <div class="col-xs-8">
 
     <% if @post.image? %>
-  　　<%= image_tag @post.image.url %>
+  　　<%= image_tag @post.image.url, :class => "img-responsive"%>
   　<% else %>
   　　<%= image_tag 'noimage.jpg',:size =>'320x320' %>
   　<% end %>
  
    
-   　<p> <span class="text-muted">投稿日：<%= simple_time(@post.created_at) %></span></p>
+   　<p> <span class="text-muted pull-right">投稿日：<%= simple_time(@post.created_at) %></span></p>
   　
-        <div>
+        <div class="box8">
           <p class="title"><%= @post.title %></p>
           <p class ="content"><%= @post.content %></p>
         </div>

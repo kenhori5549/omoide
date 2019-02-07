@@ -24,6 +24,34 @@ body{
       color : #41424E;
 }
 
+.navbar{
+  background-color : #F26161;
+  color :#FFFFFF;
+  font-weight : 700;
+  a{
+     color :#FFFFFF;  
+  }
+  .navbar-toggle{
+     color :#FFFFFF;
+  }
+  
+  
+  a:hover{
+    background-color :#DADBE3;  
+    color :#41424E;
+  }
+  a[class="navbar-brand"]:hover {
+     background-color : #F26161;
+     color :#FFFFFF; 
+     }
+  
+}
+
+
+/*#wrapper{
+  margin: 0 auto;
+}*/
+
 li[class="media"]{
     list-style-type: none;
 }
@@ -40,19 +68,66 @@ li[class="media"]{
   color : #41424E;
 }
 
-.btn-danger{
-  background-color : #F26161;
-  color :#FFFFFF;
-}
-.pull-right{
+
+input .pull-right{
   background-color : #F26161;
   color :#FFFFFF;
 }
 
+input .pull-right:hover{
+  background-color : #d64f4f;
+  color :#FFFFFF;
+}
+
+/*.navbar {
+  background-color: #6699FF;
+} 
 .alert{
   background-color : #F26161;
   color : #FFFFFF;
 }
-/*.navbar {
-  background-color: #6699FF;
-} */
+}*/
+
+.btn-danger{
+  background-color : #F26161;
+  color :#FFFFFF;
+}
+
+/* saruwaka layout*/
+.box8 {
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+}
+.box8 p {
+    margin: 0; 
+    padding: 0;
+}
+
+
+
+/*pictureintext saruwaka */
+.titleinpicture{
+  position: relative;
+}
+
+.titleinpicture p{
+ position: absolute;
+ color: black;
+ top: 50%;
+ left: 50%;
+ font-weight: bold;
+ font-size: 2em;
+ 
+ -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+ 
+}
+
+.titleinpicture img{
+}  

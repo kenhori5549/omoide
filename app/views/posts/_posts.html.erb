@@ -1,17 +1,17 @@
 <% posts.each do |post| %>
-   
+     <div id=wrapper class="col-lg-4 col-sm-6 col-xs-12">
         <div>
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">投稿日：<%= simple_time(post.created_at) %></span>
         </div> 
         <div>
            <% if post.image? %>
-        <%= link_to image_tag(post.image.thumb.url), post %>
+        <%= link_to image_tag(post.image.thumb.url,:class => "img-responsive center-block" ), post%>
          <% else %>
-          <%= image_tag 'noimage.jpg',:size =>'240x240' %>
+          <%= link_to image_tag('noimage.jpg',:size =>'240x240'), post %>
          <% end %>
           <p><%= post.title %></p>
           <p><%= post.content %></p>
         </div>
-
+    </div>
   <% end %>
   <%= paginate posts %>
