@@ -13,7 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 
-//alert('Hello!');
+
+
+//$(document).ready(function() {
+$(document).on('turbolinks:load', function() { 
+//  alert('Hello!');
+  $(".titleinpicture img").hover(function() {
+     $(this).parent().parent().find(".animated").addClass("fadeInUp");
+  },function(){
+      $(this).parent().parent().find(".animated").removeClass("fadeInUp");
+  });
+
+});
+//});
+
+
+  

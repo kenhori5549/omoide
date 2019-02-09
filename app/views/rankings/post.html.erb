@@ -7,15 +7,15 @@
       </div>
       <div class="media-body">
         <div>
-          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">posted at <%= post.created_at %></span>
+          <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">投稿日：<%= simple_time(post.created_at) %></span>
         </div>
         <div class="titleinpicture">
            <% if post.image? %>
         　　<%= link_to image_tag(post.image.thumb.url, :class => "img-responsive center-block"), post %>
         　<% else %>
-        　　<%= image_tag 'noimage.jpg',:size =>'240x240' %>
+        　　<%= image_tag 'noimage.jpg',:size =>'240x240',:class => "img-responsive center-block"%>
         　<% end %>
-          <p><%= post.title %></p>
+          <p class="animated"><%= post.title %></p>
         </div>
         <div>
           <% if current_user == post.user %>
