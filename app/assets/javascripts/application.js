@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 
@@ -28,8 +27,27 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().parent().find(".animated").removeClass("fadeInUp");
   });
 
+  $(function(){
+    var count = setInterval(changeImg, 5000);//5秒間隔
+    i = 1;
+   function changeImg(){
+        $("#animateField").css({
+          "background" : "url(main" + i + ".jpg) center no-repeat",
+          "background-size" : "cover"
+          });
+        if(i <= 2){//3枚の画像を順に切り替え
+            i++;
+        }
+        else{
+            i = 1;
+        }
+   }
+});
+
+
 });
 //});
+
 
 
   

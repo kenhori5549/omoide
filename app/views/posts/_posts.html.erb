@@ -1,6 +1,6 @@
 <% posts.each do |post| %>
      <div id=wrapper class="col-lg-4 col-sm-6 col-xs-12">
-        <div>
+        <div class="username">
           <%= link_to post.user.name, user_path(post.user) %> <span class="text-muted">投稿日：<%= simple_time(post.created_at) %></span>
         </div> 
         <div class="titleinpicture">

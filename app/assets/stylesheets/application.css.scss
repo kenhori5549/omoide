@@ -120,6 +120,7 @@ input .pull-right:hover{
       }
 }
 
+
 .titleinpicture p{
  position: absolute;
  color: black;
@@ -153,9 +154,27 @@ input .pull-right:hover{
      color :#FFFFFF;
   }
   
-/*  animation関連 */
+/*  テキストanimation関連 */
 
 .animated {
     /* 最初から非表示 */
     opacity: 0;
   }
+  
+.username{
+  margin-top : 30px;
+  margin-bottom : 30px;
+}  
+
+ /* ログイン前画面の画像 */ 
+#animateField.jumbotron { 
+  background: url(main1.jpg) center no-repeat; 
+  background-size: cover;
+ /* transition-duration : 1s; */
+  transition-property : background;
+}
+  
+.container{
+    overflow:hidden;
+  }
+  
