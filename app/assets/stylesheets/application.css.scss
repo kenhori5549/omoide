@@ -168,6 +168,8 @@ input .pull-right:hover{
 
  /* ログイン前画面の画像 */ 
 #animateField.jumbotron { 
+  height: 500px;
+  color: #FFFFFF;
   background: url(main1.jpg) center no-repeat; 
   background-size: cover;
  /* transition-duration : 1s; */
@@ -175,6 +177,32 @@ input .pull-right:hover{
 }
   
 .container{
-    overflow:hidden;
+    overflow: hidden;
   }
   
+.btn-signin{
+  height: 140px;
+  width: 140px;
+  border-radius :49%;
+  background: #F26161;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  z-index: 10;
+  line-height: 140px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+} 
+.btn-signin:hover{
+ color: #FFFFFF;
+ text-decoration: none;
+}
+
+@media screen and (min-width: 769px){
+.btn-signin:hover{
+  transform: rotate(15deg) scale(1.15);
+  transition: all .6s ease-out;
+  }
+}
