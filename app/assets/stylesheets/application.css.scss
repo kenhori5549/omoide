@@ -69,13 +69,13 @@ li[class="media"]{
 }
 
 
-input .pull-right{
-  background-color : #F26161;
+.btn.pull-right{
+  background-color : #3AC58D;
   color :#FFFFFF;
 }
 
-input .pull-right:hover{
-  background-color : #d64f4f;
+.btn.pull-right:hover{
+  background-color :#39b583 ;
   color :#FFFFFF;
 }
 
@@ -89,9 +89,45 @@ input .pull-right:hover{
 }*/
 
 .btn-danger{
-  background-color : #F26161;
+  background-color : #3AC58D;
   color :#FFFFFF;
+  border-color: #3AC58D;
 }
+.btn-danger:hover{
+  background-color : #39b583;
+  color :#FFFFFF;
+  border-color:#39b583;
+}
+
+.modal-header span{
+    font-size: 1.2em;
+}
+
+/* post#show delete button*/
+#imagewrapper{
+    position: relative;
+}
+
+.deletebutton{
+    height: 40px;
+    width: 40px;
+    border-radius : 49%;
+    opacity: 0.5;
+    background-color :#DADBE3;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 92%;
+    cursor: pointer;
+    
+}
+.deletebutton:hover{
+    text-decoration: none;
+}
+
+
 
 /* saruwaka layout*/
 .box8 {
@@ -160,27 +196,27 @@ input .pull-right:hover{
     /* 最初から非表示 */
     opacity: 0;
   }
-  
+ 
 .username{
   margin-top : 30px;
   margin-bottom : 30px;
-}  
+}    
 
- /* ログイン前画面の画像 */ 
+ /* ログイン前画面の画像 */
 #animateField.jumbotron { 
   height: 500px;
   color: #FFFFFF;
   background: url(main1.jpg) center no-repeat; 
   background-size: cover;
- /* transition-duration : 1s; */
-  transition-property : background;
+ /* transition-duration : 1s; 
+  transition-property : background;*/
 }
-  
-.container{
+ /*    Bootstrapに悪さをするので、.containerを修正*/
+#animatebox{
     overflow: hidden;
   }
   
-.btn-signin{
+.btn-signin{ 
   height: 140px;
   width: 140px;
   border-radius :49%;

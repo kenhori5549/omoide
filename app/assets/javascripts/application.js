@@ -13,8 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+
 
 
 
@@ -37,6 +40,7 @@ $(document).on('turbolinks:load', function() {
           });
         if(i <= 2){//3枚の画像を順に切り替え
             i++;
+           // console.log(i)
         }
         else{
             i = 1;

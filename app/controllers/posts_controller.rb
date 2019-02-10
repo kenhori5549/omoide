@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = 'メッセージを投稿しました。'
-      redirect_to root_url
+      redirect_to current_user
     else
       @posts = current_user.posts.order('created_at DESC').page(params[:page]).per(20)
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = 'メッセージを削除しました。'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
   
   def show

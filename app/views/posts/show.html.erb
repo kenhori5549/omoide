@@ -10,17 +10,18 @@
       </div>
     </div>
   </aside>
-  <div class="col-xs-8">
+  <div id="imagewrapper" class="col-xs-8">
 
     <% if @post.image? %>
   　　<%= image_tag @post.image.url, :class => "img-responsive"%>
   　<% else %>
   　　<%= image_tag 'noimage.jpg',:size =>'320x320' %>
   　<% end %>
- 
-   
+        <% if current_user ==@post.user %>
+        <%= link_to "×", @post, method: :delete, data: { confirm: "投稿を削除してもよろしいですか?" }, class: 'deletebutton' %>
+   　    <% end %> 
    　<p> <span class="text-muted pull-right">投稿日：<%= simple_time(@post.created_at) %></span></p>
-  　
+  　 
         <div class="box8">
           <p class="title"><%= @post.title %></p>
           <p class ="content"><%= @post.content %></p>
