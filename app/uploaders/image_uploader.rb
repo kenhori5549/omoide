@@ -74,7 +74,7 @@ end
   end
   
     def content_type_blacklist
-    ['application/pdf', 'application/json']
+    ['application/pdf', 'application/json','application/zip']
   end
 
  # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
