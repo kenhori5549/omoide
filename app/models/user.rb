@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :replys, through: :comments, source: :post, dependent: :destroy
   #postにreplyする
   def reply(post,content)
-    self.comments.create(post_id: post.id,content: content)
+    self.comments.build(post_id: post.id,content: content).save
   end
 
   #postにreplyをdestroy　不要　hidden_field タグでcomment.idを取得して、destroyすることでコメントを削除する。

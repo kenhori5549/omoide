@@ -8,7 +8,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+  else
+    storage :file
+end
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -67,6 +72,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+  
+    def content_type_blacklist
+    ['application/pdf', 'application/json']
+  end
 
  # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
   def filename
@@ -81,7 +90,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     name.downcase
   end
   
-  
+
   
   
   

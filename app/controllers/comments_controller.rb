@@ -5,13 +5,14 @@ class CommentsController < ApplicationController
   def create
     
     post = Post.find(params[:post_id])
-    if current_user.reply(post,params.require(:comment).permit(:content)[:content])
+    if current_user.reply(post,comment_params[:content])
     flash[:info] = 'コメントしました。'
     redirect_to post
     
     else
     flash[:info] = 'コメントに失敗しました。'
-    render post
+    post = Post.find(params[:post_id])
+    redirect_to post
     end
   end  
 
@@ -30,4 +31,9 @@ class CommentsController < ApplicationController
         redirect_to root_url
       end
     end
+
+def comment_params
+ params.require(:comment).permit(:content)
+end  
+    
 end
