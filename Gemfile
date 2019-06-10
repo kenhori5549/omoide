@@ -67,4 +67,10 @@ group :production do
   gem 'pg', '0.21.0'
 end
 
-gem 'cloudinary'  
+gem 'cloudinary' 
+
+#For VSCode
+group :production do
+  gem 'ruby-debug-ide'
+  gem 'debase'
+ end 
