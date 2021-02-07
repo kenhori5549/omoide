@@ -17,3 +17,5 @@
 .byebug_history
 # ignore public upload files
 /public/uploads
+#ignore .DS_Store
+.DS_Store
